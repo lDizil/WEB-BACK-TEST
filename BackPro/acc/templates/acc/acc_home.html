@@ -1,0 +1,23 @@
+{% extends 'main/layout.html'%}
+{% block title %} Зарегистрированные пользователи {% endblock %}
+
+{% block content %}
+<div class="features">
+
+    <h1>Аккаунты</h1>
+    <p> Данные зарегистрированных пользователей </p>
+    {% if acc %}
+          {% for el in acc %}
+             <div class="alert alert-warning">
+             <h3> {{ el.Login }}</h3>
+             <p> {{el.Status }}</p>
+             <a href="{% url 'acc-detail' el.id %}" class="btn btn-warning">Подробнее</a>
+             </div>
+          {% endfor %}
+    {% else %}
+        <p>Нет зарегистрированных пользователей</p>
+    {% endif %}
+
+    {# Комментирование в шаблонах #}
+</div>
+{% endblock %}

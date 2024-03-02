@@ -1,0 +1,19 @@
+{% extends 'main/layout.html'%}
+{% block title %} Ваш аккаунт {% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Форма для регистрации пользователей</h1>
+<!-- <form method="post" action="/news/check"> создание отдельной страницы для обработки -->
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.Login }}<br>
+        {{ form.Status }}<br>
+        {{ form.About }}<br>
+        {{ form.Date }}<br>
+        <span> {{ error }}</span>
+        <button class="btn btn-success" type="submit">Добавить данные</button>
+    </form>
+</div>
+{% endblock %}

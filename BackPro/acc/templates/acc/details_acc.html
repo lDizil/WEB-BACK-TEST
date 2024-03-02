@@ -1,0 +1,13 @@
+{% extends 'main/layout.html'%}
+{% block title %} {{ article.Login }} {% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>{{ article.Login }}</h1>
+    <p>{{ article.Date }}</p>
+    <p>{{ article.Status }}</p>
+    <p>{{ article.About }}</p>
+    <a href="{% url 'acc-delete' article.id %}" class="btn btn-danger">Удалить данные</a>
+    <a href="{% url 'acc-update' article.id %}" class="btn btn-info">Редактировать данные</a>
+</div>
+{% endblock %}
